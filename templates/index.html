@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Droid Simulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Project Droid Task Expansion</h1>
+    <form method="post" action="/">
+        <label for="task_title">Enter Task Title:</label><br>
+        <input type="text" id="task_title" name="task_title"><br>
+        <input type="submit" value="Generate Task Details">
+    </form>
+</body>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        var taskTitle = document.getElementById('task_title').value;
+        if (!taskTitle.trim()) {
+            alert('Please enter a task title.');
+            event.preventDefault();
+        }
+    });
+</script>
+
+</html>
